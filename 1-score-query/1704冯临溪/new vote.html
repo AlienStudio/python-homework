@@ -3,14 +3,59 @@
 	<head>
 		<meta charset="UTF-8">
 		<title> 创建新投票 </title>
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
+	<style>
+		#del_label{
+			color: blue;
+			font-size: 20px;
+			text-decoration: none;
+		}
+	</style>
 	<body>
-		<h1> 创建新投票 </h1><br />
-		<div>
-			输入投票主题: <input type="text" />
+		<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+		<div id="app">
+			<h1> 创建新投票 </h1><br />
 			<div>
-				
+				输入投票主题: <input type="text" v-model="topic"/>
+			<div>
+				<form >
+					<div class="form_all">
+						<li class="form_in">
+							<div >
+								<label for="1">输入投票选项: </label>
+								<input id="1" type="text" v-model="items[0]"/><br />
+								<div v-for="i in item_count-1">
+									<label for="{{i+1}}">输入投票选项: </label>
+									<input id="{{i+1}}" type="text" v-model="items[i+1]"/>
+									<br />
+								</div>
+							</div>
+						</li>
+						<a class="right" v-on:click="add_items()">add</a>
+					</div>
+				</form>
+			</div>
 			</div>
 		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data: {
+					topic: '',
+					items: [],
+					item_count: 1
+				},
+				methods:{
+					add_items: function(){
+						this.item_count++;
+					},
+					delete_item: function(){
+						this.item_count--;
+					}
+				}
+			});
+		</script>
 	</body>
 </html>

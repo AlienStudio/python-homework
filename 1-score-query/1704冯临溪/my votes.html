@@ -3,9 +3,53 @@
 	<head>
 		<meta charset="UTF-8">
 		<title> 我的投票 </title>
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/myIOstream.js" ></script>
 	</head>
 	<body>
+		<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 		<h1> 我的投票 </h1>
-		
+		<div id="app">
+			<li>
+				<div v-for="i in data.length">
+					<ul><a>{{data[i-1][0]}}:</a></ul>
+					<ul>
+						<li>
+							<form action="" method="get">
+								<div v-for="vote_option in data[i-1].length-1">
+									<label><input name="option" value="" type="radio" v-model="flags[vote_option-1]" onclick="Reset(vote_option-1)"/>
+									{{data[i-1][vote_option]}}
+									</label>
+								</div>
+							</form>
+
+						</li>
+					</ul>
+				</div>
+			</li>
+		</div>
+		<script>
+			new Vue({ 
+				el:'#app',
+				data:{
+					vote_names: input_vote_Name(),
+					data: getAllData(),
+					flags: []
+				},
+				methods:{
+					get_options: function(vote_name){
+						return input_vote_Options(vote_name);
+					}
+				}
+			});
+			function Reset(i){
+				var x;
+				for(x=0;x<flags.length;x++){
+					flags[x]=false;
+				}
+				flags[i]=true;
+			}
+		</script>
 	</body>
 </html>
