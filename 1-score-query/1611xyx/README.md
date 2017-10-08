@@ -1,3 +1,3 @@
-placeholder for not being kicked
+由于学校作业还没做+预计的功能比较多，还没有做完
 
-real file will be added sooooon
+先发个东西证明我还活着，最晚10号应该能交了
