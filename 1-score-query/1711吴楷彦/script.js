@@ -16,5 +16,12 @@ window.onload=function(){
   var i=0;
   function newQuestion(){
     div.innerHTML+="<input type='int' id=Num"+i+">";
+    //此处省略代码n行
+  }
+  function showQuestion(){
+    //此处省略代码n'行
+  }
+  function showResult(){
+    //此处省略代码n''行
   }
 }
