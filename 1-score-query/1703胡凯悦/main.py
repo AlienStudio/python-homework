@@ -1,8 +1,6 @@
 # coding:utf-8
 # Created by ncj on 2017-9-25
 
-<<<<<<< master
-=======
 
 
 
@@ -24,7 +22,6 @@
 
 
 
->>>>>>> homework
 # 如果报错module not found，你需要打开命令行输入pip install xlrd. 对于其他包也是如此
 import xlrd
 
