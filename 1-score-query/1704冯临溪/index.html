@@ -3,13 +3,29 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>E-T-E-R-N-A-L-B-L-U-E的投票组建</title>
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
+	<style>
+	</style>
 	<body>
 		<h1> 你好，欢迎来到我的投票组件 </h1>
 		<div id="">
-			<button id="new_vote"> <a href="new vote.html">创建新投票 </a> </button>
-			<br />
-			<button id="enter_a_vote"> <a href="new vote.html">进入我的投票</a> </button>
+			<form>
+				<li class="form">
+					<ul>
+						<a href="new vote.html">
+							<button id="new_vote" onclick="window.open('new vote.html')"> 创建新投票  </button>
+						</a>
+					</ul>
+					<ul>
+						<button id="enter_a_vote" onclick="window.open('my votes.html')"> 进入我的投票 </button>
+					</ul>
+				</li>
+				<div id="login">
+					<a class="right" href="login.html">登录</a>
+				</div>
+			</form>
 		</div>
 
 	</body>
